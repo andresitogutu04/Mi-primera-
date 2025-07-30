@@ -49,6 +49,9 @@ def parse(code, options=None, delegate=None, **kwargs):
         options['jsx'] = True
         options['classProperties'] = True
 
+    # Auto-enable features for ES2024
+    options['classProperties'] = True  # ES2022: Public class fields
+
     commentHandler = None
 
     def proxyDelegate(node, metadata):
